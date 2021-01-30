@@ -8,7 +8,11 @@ export class Playlist extends React.Component {
     return (
       <div className="Playlist">
         <input value="New Playlist"/>
-        
+        {
+          this.props.playlists.map((playlist) => {
+            return <TrackList tracks={playlist.playlistTracks} />;
+          })
+        }
         <button className="Playlist-save">SAVE TO SPOTIFY</button>
       </div>
     );

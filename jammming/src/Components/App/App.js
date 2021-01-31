@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Spotify } from '../../util/Spotify';
 
 import { SearchBar } from '../SearchBar/SearchBar';
 import { SearchResults } from '../SearchResults/SearchResults';
@@ -96,7 +97,12 @@ class App extends React.Component {
   }
 
   search(term) {
-    console.log(`Search term is ${term}.`);
+    Spotify.getAccessToken();
+    /*const results = Spotify.search(term);
+    console.log(`Search results are: ${results}`);
+    if (results) {
+      this.setState({searchResults: results});
+    }*/
   }
 
   render() {

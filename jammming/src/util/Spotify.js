@@ -1,7 +1,7 @@
 let accessToken;
 
 const client_id = '89b0cc957f1b411dac0211a0c0c6b816';
-const redirect_uri = 'http://localhost:3000/';
+const redirect_uri = 'http://yeoldeporkchop.surge.sh/';
 const scopes = 'user-read-private,user-read-email,playlist-modify-public,playlist-modify-private';
 
 export const Spotify = {
@@ -22,9 +22,7 @@ export const Spotify = {
       return accessToken;
     } else {      
       const url = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=${scopes}&redirect_uri=${redirect_uri}`
-      window.location = url;
-      //const accessURL = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}&scope=user-read-private%20user-read-email&state=34fFs29kd09`;
-      
+      window.location = url;      
     }
   },
   search(term) {
